@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import logging
 import logging.handlers 
 
-#日志
+#日志打印
 LOG_FILE = 'tst.log'  
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes = 1024*1024, backupCount = 5)
 fmt = '%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s'  
@@ -120,20 +120,16 @@ def fill_topic(array):
             f.write(array[key][0] +'\t'+str(array[key][1])+'\n')    
 def main():
     """
-    抓取微博热点 
+    抓取数据
     """
     #时间
     today = str(datetime.datetime.now())[:13].replace(' ', '_')
-    # 解析文章
+    # 
    
-    # 地址及类目数组
-    url_array = ['http://api.weibo.cn/2/guest/cardlist?networktype=wifi&uicode=10000011&moduleID=708&checktoken=d322414e8a72505476416f1273160de2&lcardid=100803_-_card_home_menu&c=android&i=b7e6b69&s=29d67dbb&ua=smartisan-YQ601__weibo__6.10.0__android__android5.1.1&wm=14010_0013&aid=01AmwG_4WQHwOm5HgWJx5nMWVe3PHyOg1488thrtAHvYbQmF4.&did=dbae7fea9baa59e0e30eeedff9399fbbcc9a0baf&fid=100803_-_page_hot_list&uid=1005058098897&v_f=2&v_p=36&from=106A095010&gsid=_2AkMgsBC7f8NhqwJRmP0VyWPiZYV_ww_EieLBAH7sJRM3HRl-3T9kqm8ktRVT5nG9XvLsfkXo6TbkJ2TT-zwmjw..&imsi=460022010250369&lang=zh_CN&lfid=100803&page=1&skin=default&count=20&oldwm=14010_0013&sflag=1&containerid=100803_-_page_hot_list&luicode=10000011&need_head_cards=1', 
-                 'http://m.weibo.cn/container/getIndex?openApp=0&from=1067295010&luicode=10000010&lfid=&containerid=100803_ctg1_1_-_page_topics_ctg1__1',
-                 'http://m.weibo.cn/container/getIndex?openApp=0&from=1067295010&luicode=10000010&lfid=&containerid=100803_ctg1_138_-_page_topics_ctg1__138', 
-                 'http://m.weibo.cn/container/getIndex?openApp=0&from=1067295010&luicode=10000010&lfid=&containerid=100803_ctg1_3_-_page_topics_ctg1__3',
-                 'http://m.weibo.cn/container/getIndex?openApp=0&from=1067295010&luicode=10000010&lfid=&containerid=100803_ctg1_100_-_page_topics_ctg1__100']
+    # 数据来源接口地址数组
+    url_array = [xx,xx,]
 
-    num_array=[0,1,2,3,4]##出错后是url_array[data_arry[num_array]]
+    num_array=[0,1,2,3,4]
     topic_text_array = ['话题', '社会', '科技', '科普', '电影']
     list_array = []
     # 主体
